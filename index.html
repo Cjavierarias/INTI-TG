@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Tecnologías de Gestión</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Selecciona una Tecnología de Gestión</h1>
+  <div class="menu">
+    <button onclick="seleccionar('5s')">5S</button>
+    <button onclick="seleccionar('kaizen')">Kaizen</button>
+    <button onclick="seleccionar('kanban')">Kanban</button>
+    <button onclick="seleccionar('jit')">Just in Time</button>
+    <button onclick="seleccionar('poka')">Poka Yoke</button>
+  </div>
+
+  <script>
+    function seleccionar(tecnologia) {
+      localStorage.setItem('tecnologia', tecnologia);
+      window.location.href = 'juego.html';
+    }
+  </script>
+</body>
+</html>
