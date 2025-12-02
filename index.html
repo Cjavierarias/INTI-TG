@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Operación Eficiencia</title>
-  <link rel="stylesheet" href="estilos.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Operación Eficiencia — Inicio</title>
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <h1>🎮 Operación Eficiencia</h1>
-  <p>La Fábrica Lean está en crisis. ¿Podrás salvarla?</p>
-  <label>Selecciona tu rol:</label>
-  <select id="rol">
-    <option>Gerente</option>
-    <option>Jefe de Producción</option>
-    <option>Operario de Producción</option>
-    <option>Operario de Depósito</option>
-    <option>Comprador</option>
-    <option>Vendedor</option>
-  </select>
-  <br><br>
-  <button onclick="iniciar()">Iniciar Misión</button>
+<main class="container">
+<header class="hero">
+<h1>🎮 Operación Eficiencia: La Fábrica Lean</h1>
+<p class="lead">Rescata Fábrica Futura S.A. aplicando herramientas Lean. Juego para 1 jugador — ideal para capacitaciones.</p>
+</header>
 
-  <script>
-    function iniciar() {
-      const rol = document.getElementById('rol').value;
-      localStorage.setItem('rol', rol);
-      localStorage.setItem('puntos', 0);
-      window.location.href = 'juego.html';
-    }
-  </script>
+
+<section class="card small">
+<label for="rol">Selecciona tu rol</label>
+<select id="rol">
+<option>Gerente</option>
+<option>Jefe de Producción</option>
+<option>Operario de Producción</option>
+<option>Operario de Depósito</option>
+<option>Comprador</option>
+<option>Vendedor</option>
+</select>
+<div class="actions">
+<button id="startBtn" class="btn">Iniciar Misión</button>
+<a class="btn ghost" href="cards-print.html" target="_blank">Imprimir tarjetas</a>
+</div>
+</section>
+
+
+<section class="card small">
+<h3>Instrucciones rápidas</h3>
+<ul>
+<li>Elige tu rol y presiona <strong>Iniciar Misión</strong>.</li>
+<li>Pasa por 5 niveles: diagnosticar, 5S, Kaizen, JIT y cultura.</li>
+<li>Responde dilemas y enfrenta eventos con el <em>Dado Lean</em>.</li>
+<li>Al finalizar podrás descargar tu certificado.</li>
+</ul>
+</section>
+
+
+<footer class="muted">Creado por tu equipo — listo para desplegar en GitHub Pages.</footer>
+</main>
+
+
+<script>
+document.getElementById('startBtn').addEventListener('click', ()=>{
+const rol = document.getElementById('rol').value;
+localStorage.setItem('rol', rol);
+// limpiar estados previos
+localStorage.removeItem('oe_puntos');
+localStorage.removeItem('oe_historial');
+localStorage.removeItem('oe_nivel');
+window.location.href = 'juego.html';
+});
+</script>
 </body>
 </html>
