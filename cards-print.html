@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Tarjetas - Operación Eficiencia (Imprimible)</title>
+<style>
+  @page { margin: 10mm; }
+  body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background:#f4f6f8; padding:10px; }
+  .sheet { width: 210mm; margin: 8mm auto; display:flex; flex-wrap:wrap; gap:10mm; }
+  .card {
+    width: 95mm; /* aproximadamente medio A4 con márgenes */
+    height: 64mm;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    padding: 8px;
+    box-sizing: border-box;
+    border: 2px solid #e6eef7;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .card h3 { margin:0; font-size:14px; color:#004a86; }
+  .card p { margin:6px 0; font-size:12px; color:#222; }
+  .options { display:flex; gap:6px; justify-content:space-between; }
+  .opt { flex:1; background:#f0f8ff; border:1px solid #cfe6ff; padding:6px; border-radius:6px; font-size:11px; }
+  .small { font-size:10px; color:#666; }
+  .dado-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }
+  .face { background:#fff; border:1px dashed #0078d4; padding:8px; border-radius:6px; font-size:11px; text-align:center; height:60px; display:flex; flex-direction:column; justify-content:center; }
+  .title { text-align:center; margin-bottom:10px; color:#002c4a; font-weight:700; }
+  footer { margin-top:18px; text-align:center; font-size:11px; color:#444; }
+  @media print {
+    body { background: white; }
+    .sheet { gap:6mm; }
+    .card { box-shadow:none; border:1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+  <h1 style="text-align:center">🎮 Operación Eficiencia — Tarjetas de Dilema & Dado Lean (Imprimible)</h1>
+  <div class="sheet">
+    <!-- Tarjeta 1 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 1 — La línea se detuvo otra vez</h3>
+        <p class="small">Dilema: Un operario perdió 20 minutos buscando una herramienta de cambio rápido.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “Que lo busque mejor. No es mi problema.”<div class="small">Consecuencia: +10 min de tiempo muerto.</div></div>
+        <div class="opt"><strong>B)</strong> “Etiquetamos y organizamos toda la estación.”<div class="small">Consecuencia: Desbloquea bono 5S en N2.</div></div>
+        <div class="opt"><strong>C)</strong> “Compramos 3 más, así siempre hay uno.”<div class="small">Consecuencia: Aumenta inventario oculto y costos.</div></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 2 — Pedido enterrado en el almacén</h3>
+        <p class="small">Dilema: Cliente exige entrega en 48h pero el pedido está perdido entre 300 pallets sin etiquetar.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “Que revisen uno por uno.”<div class="small">Consecuencia: Cliente insatisfecho (-20 confianza).</div></div>
+        <div class="opt"><strong>B)</strong> “Implementamos FIFO con cinta de colores hoy.”<div class="small">Consecuencia: Desbloquea flujo visual en N4.</div></div>
+        <div class="opt"><strong>C)</strong> “Decimos que no se puede; cancelamos.”<div class="small">Consecuencia: Pérdida de ingresos y credibilidad.</div></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 3 — ¿Para qué deshacerse?</h3>
+        <p class="small">Dilema: Un compañero guarda piezas obsoletas “por si acaso”.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “Déjalo, no vale la pelea.”<div class="small">Consecuencia: Espacio útil reducido; penaliza eficiencia.</div></div>
+        <div class="opt"><strong>B)</strong> “Zona de cuarentena: si en 30 días no se usa, se descarta.”<div class="small">Consecuencia: Aplica Kaizen suave; +liderazgo.</div></div>
+        <div class="opt"><strong>C)</strong> “Lo tiro sin avisar.”<div class="small">Consecuencia: Conflicto; resistencia posterior.</div></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 4 — El piso limpio no dura</h3>
+        <p class="small">Dilema: Después del 5S el área vuelve al desorden al día siguiente.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “Yo lo mantengo solo.”<div class="small">Consecuencia: Agotamiento; no sostenible.</div></div>
+        <div class="opt"><strong>B)</strong> “Creamos un checklist diario con turnos rotativos.”<div class="small">Consecuencia: Cultura de responsabilidad (+sostenibilidad).</div></div>
+        <div class="opt"><strong>C)</strong> “Instalamos cámaras para ver quién ensucia.”<div class="small">Consecuencia: Clima tóxico; -15 moral.</div></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 5 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 5 — ¿Por qué falla la máquina?</h3>
+        <p class="small">Dilema: Máquina se recalienta 3 veces por semana.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “Compramos nueva máquina.”<div class="small">Consecuencia: Gasto innecesario; no soluciona raíz.</div></div>
+        <div class="opt"><strong>B)</strong> “Analizamos con 5 por qué y corregimos raíz.”<div class="small">Consecuencia: Solución sostenible; desbloquea autonomantenimiento.</div></div>
+        <div class="opt"><strong>C)</strong> “Le ponemos un ventilador.”<div class="small">Consecuencia: Parche temporal; fallará en 48h.</div></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 6 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 6 — Idea del operario</h3>
+        <p class="small">Dilema: Operario propone cambiar orden de ensamblaje para reducir movimientos.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “No cambiamos nada.”<div class="small">Consecuencia: Oportunidad perdida.</div></div>
+        <div class="opt"><strong>B)</strong> “Hacemos prueba rápida en un turno.”<div class="small">Consecuencia: Empoderamiento + puntos Kaizen.</div></div>
+        <div class="opt"><strong>C)</strong> “Decirle que eso es trabajo de ingeniería.”<div class="small">Consecuencia: Desmotiva; silencia ideas.</div></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 7 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 7 — Proveedor tardío</h3>
+        <p class="small">Dilema: Sin materia prima la línea se paraliza; comprador propone pedir el doble.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “Sí, mejor stock de seguridad.”<div class="small">Consecuencia: Vuelve modelo inventario; pierde JIT.</div></div>
+        <div class="opt"><strong>B)</strong> “Trabajamos con proveedor para mejorar confiabilidad.”<div class="small">Consecuencia: Colaboración Lean; mejora cadena.</div></div>
+        <div class="opt"><strong>C)</strong> “Cambiamos proveedor, aunque más caro.”<div class="small">Consecuencia: Sube costos; no ataca raíz.</div></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 8 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 8 — El vendedor prometió 500</h3>
+        <p class="small">Dilema: Capacidad diaria 300; vendedor prometió 500 para mañana.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “Prometemos 500.”<div class="small">Consecuencia: Sobrecarga, errores, burnout.</div></div>
+        <div class="opt"><strong>B)</strong> “Negociamos: 300 hoy, 200 en 48h con descuento.”<div class="small">Consecuencia: Cumple con Takt Time y transparencia.</div></div>
+        <div class="opt"><strong>C)</strong> “Rechazamos pedido.”<div class="small">Consecuencia: Pérdida comercial; cliente se va.</div></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 9 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 9 — Nuevo operario no entiende tablero</h3>
+        <p class="small">Dilema: El operario pregunta “¿Para qué sirve esto?” al ver el tablero visual.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “Alguien le explicará… algún día.”<div class="small">Consecuencia: Pérdida de estándares; regresión.</div></div>
+        <div class="opt"><strong>B)</strong> “Ritual diario: 5 minutos frente al tablero.”<div class="small">Consecuencia: Refuerza cultura visual (+sostenibilidad).</div></div>
+        <div class="opt"><strong>C)</strong> “Quitamos el tablero.”<div class="small">Consecuencia: Vuelta al caos en 2 semanas.</div></div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 10 -->
+    <div class="card">
+      <div>
+        <h3>Tarjeta 10 — ¿Eliminamos Kaizen?</h3>
+        <p class="small">Dilema: La gerencia pide recortes y propone eliminar el programa Kaizen.</p>
+      </div>
+      <div class="options">
+        <div class="opt"><strong>A)</strong> “Tiene razón. Ahorramos horas-hombre.”<div class="small">Consecuencia: Pérdida de momentum; estancamiento.</div></div>
+        <div class="opt"><strong>B)</strong> “Integramos Kaizen en operaciones diarias.”<div class="small">Consecuencia: Kaizen como hábito; máximo puntaje.</div></div>
+        <div class="opt"><strong>C)</strong> “Me opongo fuertemente.”<div class="small">Consecuencia: Riesgo de conflicto, defiende cultura.</div></div>
+      </div>
+    </div>
+
+    <!-- Dado Lean: caras -->
+    <div style="width:100%; margin-top:8mm;">
+      <div class="title">🎲 DADO LEAN — 6 Caras</div>
+      <div class="dado-grid">
+        <div class="face"><strong>1 — Muda Sorpresa</strong><div class="small">Aparece nuevo desperdicio no identificado.</div></div>
+        <div class="face"><strong>2 — Apoyo del Equipo</strong><div class="small">Un compañero te ayuda; acción cuesta 50% menos esfuerzo.</div></div>
+        <div class="face"><strong>3 — Falla de Proveedor</strong><div class="small">Materia prima llega defectuosa o tarde; aplica Plan B JIT.</div></div>
+        <div class="face"><strong>4 — Inspección de Cliente</strong><div class="small">Cliente visita; demuéstralo con orden y calidad.</div></div>
+        <div class="face"><strong>5 — Idea del Piso</strong><div class="small">Operario propone mejora; gratis si la adoptas.</div></div>
+        <div class="face"><strong>6 — Cambio de Demanda</strong><div class="small">Pedido cambia: debes ajustar producción 24h.</div></div>
+      </div>
+      <footer>Consejo: recorta cada tarjeta y plastifícalas para usar en talleres. El dado puede fabricarse con pegatinas o usarse virtualmente.</footer>
+    </div>
+  </div>
+</body>
+</html>
