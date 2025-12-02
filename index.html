@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Operación Eficiencia — Inicio</title>
-<link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operación Eficiencia — Inicio</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-<main class="container">
-<header class="hero">
-<h1>🎮 Operación Eficiencia: La Fábrica Lean</h1>
-<p class="lead">Rescata Fábrica Futura S.A. aplicando herramientas Lean. Juego para 1 jugador — ideal para capacitaciones.</p>
-</header>
+  <main class="container">
+    <header class="hero">
+      <h1>🎮 Operación Eficiencia: La Fábrica Lean</h1>
+      <p class="lead">Rescata Fábrica Futura S.A. aplicando herramientas Lean. Juego interactivo para capacitaciones en gestión.</p>
+    </header>
 
+    <section class="card small">
+      <label for="rol">Selecciona tu rol en la fábrica</label>
+      <select id="rol">
+        <option>Gerente</option>
+        <option>Jefe de Producción</option>
+        <option>Operario de Producción</option>
+        <option>Operario de Depósito</option>
+        <option>Comprador</option>
+        <option>Vendedor</option>
+      </select>
+      <div class="actions">
+        <button id="startBtn" class="btn pulse">Iniciar Misión</button>
+        <a class="btn ghost" href="cards-print.html" target="_blank" style="display:none;">Imprimir tarjetas</a>
+      </div>
+    </section>
 
-<section class="card small">
-<label for="rol">Selecciona tu rol</label>
-<select id="rol">
-<option>Gerente</option>
-<option>Jefe de Producción</option>
-<option>Operario de Producción</option>
-<option>Operario de Depósito</option>
-<option>Comprador</option>
-<option>Vendedor</option>
-</select>
-<div class="actions">
-<button id="startBtn" class="btn">Iniciar Misión</button>
-<a class="btn ghost" href="cards-print.html" target="_blank">Imprimir tarjetas</a>
-</div>
-</section>
+    <section class="card small">
+      <h3>¿Cómo jugar?</h3>
+      <ul style="padding-left: 1.5rem; margin-top: 0.8rem; line-height: 1.6;">
+        <li>Elige tu rol y enfrenta dilemas reales de la fábrica.</li>
+        <li>Resuelve 5 niveles: diagnóstico, 5S, Kaizen, JIT y cultura Lean.</li>
+        <li>Lanza el <strong>Dado Lean</strong> y enfrenta eventos aleatorios.</li>
+        <li>Termina con un <strong>certificado personalizado</strong> y métricas visuales.</li>
+      </ul>
+    </section>
 
+    <footer class="muted">Creado para formación Lean — 100% en el navegador.</footer>
+  </main>
 
-<section class="card small">
-<h3>Instrucciones rápidas</h3>
-<ul>
-<li>Elige tu rol y presiona <strong>Iniciar Misión</strong>.</li>
-<li>Pasa por 5 niveles: diagnosticar, 5S, Kaizen, JIT y cultura.</li>
-<li>Responde dilemas y enfrenta eventos con el <em>Dado Lean</em>.</li>
-<li>Al finalizar podrás descargar tu certificado.</li>
-</ul>
-</section>
-
-
-<footer class="muted">Creado por tu equipo — listo para desplegar en GitHub Pages.</footer>
-</main>
-
-
-<script>
-document.getElementById('startBtn').addEventListener('click', ()=>{
-const rol = document.getElementById('rol').value;
-localStorage.setItem('rol', rol);
-// limpiar estados previos
-localStorage.removeItem('oe_puntos');
-localStorage.removeItem('oe_historial');
-localStorage.removeItem('oe_nivel');
-window.location.href = 'juego.html';
-});
-</script>
+  <script>
+    document.getElementById('startBtn').addEventListener('click', () => {
+      const rol = document.getElementById('rol').value;
+      localStorage.setItem('rol', rol);
+      localStorage.removeItem('oe_puntos');
+      localStorage.removeItem('oe_historial');
+      localStorage.removeItem('oe_nivel');
+      window.location.href = 'juego.html';
+    });
+  </script>
 </body>
 </html>
