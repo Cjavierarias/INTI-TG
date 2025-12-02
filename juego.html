@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Operación Eficiencia — Juego</title>
-<link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operación Eficiencia — Juego</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-<main class="container">
-<header>
-<h1 id="titulo"></h1>
-<p id="instruccion" class="muted"></p>
-</header>
+  <main class="container">
+    <header>
+      <h1 id="titulo">Cargando...</h1>
+      <p id="instruccion" class="muted">Preparando el dilema...</p>
+    </header>
 
+    <section id="contenido" class="card">
+      <p>Generando desafío...</p>
+    </section>
 
-<section id="contenido" class="card"></section>
+    <nav class="controls">
+      <button id="guardar" class="btn ghost">Guardar progreso</button>
+      <button id="irFinal" class="btn">Saltar a resultados</button>
+    </nav>
 
+    <footer class="muted">Rol: <span id="rolSpan">Cargando...</span></footer>
+  </main>
 
-<nav class="controls">
-<button id="guardar" class="btn ghost">Guardar progreso</button>
-<button id="irFinal" class="btn">Ir a resultados</button>
-</nav>
-
-
-<footer class="muted">Rol: <span id="rolSpan"></span></footer>
-</main>
-
-
-<script src="juego.js"></script>
+  <script src="juego.js"></script>
 </body>
 </html>
