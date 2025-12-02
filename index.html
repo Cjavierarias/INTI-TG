@@ -2,22 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Juego de Tecnologías de Gestión</title>
+  <title>Operación Eficiencia</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <h1>Selecciona una Tecnología de Gestión</h1>
-  <div class="menu">
-    <button onclick="seleccionar('5s')">5S</button>
-    <button onclick="seleccionar('kaizen')">Kaizen</button>
-    <button onclick="seleccionar('kanban')">Kanban</button>
-    <button onclick="seleccionar('jit')">Just in Time</button>
-    <button onclick="seleccionar('poka')">Poka Yoke</button>
-  </div>
+  <h1>🎮 Operación Eficiencia</h1>
+  <p>La Fábrica Lean está en crisis. ¿Podrás salvarla?</p>
+  <label>Selecciona tu rol:</label>
+  <select id="rol">
+    <option>Gerente</option>
+    <option>Jefe de Producción</option>
+    <option>Operario de Producción</option>
+    <option>Operario de Depósito</option>
+    <option>Comprador</option>
+    <option>Vendedor</option>
+  </select>
+  <br><br>
+  <button onclick="iniciar()">Iniciar Misión</button>
 
   <script>
-    function seleccionar(tecnologia) {
-      localStorage.setItem('tecnologia', tecnologia);
+    function iniciar() {
+      const rol = document.getElementById('rol').value;
+      localStorage.setItem('rol', rol);
+      localStorage.setItem('puntos', 0);
       window.location.href = 'juego.html';
     }
   </script>
