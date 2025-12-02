@@ -1,43 +1,70 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Resultado Final</title>
-  <link rel="stylesheet" href="estilos.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Operación Eficiencia — Resultado Final</title>
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <h1>🏆 Resultado Final</h1>
-  <p id="resultado"></p>
-  <canvas id="certificado" width="600" height="400"></canvas>
-  <br>
-  <button onclick="descargar()">Descargar Certificado</button>
+<main class="container">
+<header>
+<h1>🏆 Resultado Final</h1>
+</header>
 
-  <script>
-    const puntos = parseInt(localStorage.getItem('puntos'));
-    let nivel = '';
-    if (puntos >= 90) nivel = 'Cinturón Negro Lean';
-    else if (puntos >= 75) nivel = 'Cinturón Verde';
-    else if (puntos >= 60) nivel = 'Aprendiz Lean';
-    else nivel = 'Modo Sobrevivencia';
 
-    document.getElementById('resultado').textContent = `Puntos: ${puntos} - ${nivel}`;
+<section class="card" id="resultadoCard">
+<p id="resultado"></p>
+<canvas id="certificado" width="800" height="500"></canvas>
+<div class="actions">
+<button id="descargar" class="btn">Descargar Certificado</button>
+<button id="volver" class="btn ghost">Volver al inicio</button>
+</div>
+</section>
 
-    const canvas = document.getElementById('certificado');
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#fff';
-    ctx.fillRect(0, 0, 600, 400);
-    ctx.fillStyle = '#000';
-    ctx.font = '24px Arial';
-    ctx.fillText('Certificado Lean', 200, 100);
-    ctx.fillText(`Rol: ${localStorage.getItem('rol')}`, 50, 200);
-    ctx.fillText(`Nivel alcanzado: ${nivel}`, 50, 250);
 
-    function descargar() {
-      const link = document.createElement('a');
-      link.download = 'certificado_lean.png';
-      link.href = canvas.toDataURL();
-      link.click();
-    }
-  </script>
+<footer class="muted">Gracias por jugar — ¡lleva lo aprendido al taller!</footer>
+</main>
+
+
+<script>
+function cargarResumen() {
+const resumen = JSON.parse(localStorage.getItem('oe_resumen') || 'null');
+const puntos = parseInt(localStorage.getItem('oe_puntos') || '0');
+const rol = localStorage.getItem('rol') || 'Sin rol';
+
+
+let nivelText = '';
+if (puntos >= 90) nivelText = 'Cinturón Negro Lean';
+else if (puntos >= 75) nivelText = 'Cinturón Verde';
+else if (puntos >= 60) nivelText = 'Aprendiz Lean';
+else nivelText = 'Modo Sobrevivencia';
+
+
+document.getElementById('resultado').textContent = `Rol: ${rol} — Puntos: ${puntos} — ${nivelText}`;
+
+
+// dibujar certificado simple
+const canvas = document.getElementById('certificado');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = '#fff'; ctx.fillRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle = '#002c4a'; ctx.font = '32px Arial'; ctx.fillText('Certificado Lean', 260, 80);
+ctx.font = '20px Arial'; ctx.fillText(`Jugador: ${rol}`, 80, 180);
+ctx.fillText(`Puntos: ${puntos}`, 80, 230);
+ctx.fillText(`Resultado: ${nivelText}`, 80, 280);
+ctx.font = '14px Arial'; ctx.fillText('Operación Eficiencia — Fábrica Futura S.A.', 80, 340);
+}
+
+
+window.onload = function(){
+cargarResumen();
+document.getElementById('descargar').addEventListener('click', ()=>{
+const canvas = document.getElementById('certificado');
+const link = document.createElement('a');
+link.download = 'certificado_lean.png';
+link.href = canvas.toDataURL();
+link.click();
+});
+document.getElementById('volver').addEventListener('click', ()=>{ window.location.href='index.html'; });
+};
+</script>
 </body>
 </html>
